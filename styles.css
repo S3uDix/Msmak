@@ -1,0 +1,41 @@
+/* same as v1 with tiny tweaks */ 
+:root{
+  --bg:#0b0c10; --panel:#0f141b; --panel-2:#121826; --text:#e7edf6; --muted:#9aa6b2;
+  --primary:#6b5cff; --primary-2:#7b6aff; --ring:rgba(123,106,255,.25);
+  --stroke:#222736;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; font-family:'Tajawal', system-ui, sans-serif; background:var(--bg); color:var(--text)}
+.bg{position:fixed; inset:0; overflow:hidden; z-index:-1}
+.bg-img{min-width:100%; min-height:100%; object-fit:cover; opacity:.18; filter:grayscale(.2) contrast(1.1)}
+.hero{display:flex; align-items:center; justify-content:center; padding:22px 10px; position:sticky; top:0;
+  backdrop-filter:saturate(160%) blur(8px); background:linear-gradient(180deg, rgba(10,10,14,.65), rgba(10,10,14,.25)); border-bottom:1px solid var(--stroke); z-index:10}
+.hero-logo{width:110px; height:110px; display:grid; place-items:center; border-radius:22px; background:linear-gradient(180deg, #0f1729, #0a0f1a); border:1px solid var(--stroke); box-shadow:0 6px 24px rgba(0,0,0,.35)}
+.hero-logo img{width:84%; height:auto}
+.hero-side{width:44px; opacity:.8}
+.hero-side.left{margin-inline-start:12px}
+.hero-side.right{margin-inline-end:12px}
+main{display:flex; justify-content:center; padding:28px 12px 60px}
+.panel{width:min(900px, 94vw); background:var(--panel); border:1px solid var(--stroke); border-radius:18px; padding:18px 18px 22px; box-shadow:0 20px 60px rgba(0,0,0,.35)}
+.panel-head{display:flex; align-items:center; gap:10px; padding:6px 8px 16px; border-bottom:1px dashed #243047; margin-bottom:12px}
+.panel-head .badge{width:28px; opacity:.9}
+.panel-head h1{margin:0; font-size:20px}
+.form{display:grid; grid-template-columns: 1fr; gap:12px}
+.row{display:grid; grid-template-columns: 220px 1fr; gap:10px; align-items:center}
+label{font-weight:700}
+select{appearance:none}
+select, input[type=text]{width:100%; padding:10px 12px; border-radius:12px; background:var(--panel-2); color:var(--text); border:1px solid #2a3141; outline:none}
+select:focus, input[type=text]:focus{border-color:var(--primary); box-shadow:0 0 0 3px var(--ring)}
+.checks{display:flex; flex-wrap:wrap; gap:10px; margin-top:4px}
+.check{display:inline-flex; gap:8px; align-items:center; background:#0f1220; padding:8px 10px; border-radius:12px; border:1px solid #263146}
+.actions{display:flex; gap:10px; justify-content:flex-end; margin-top:6px}
+.btn{appearance:none; padding:10px 14px; border-radius:12px; border:1px solid #2b3240; background:#0f1220; color:var(--text); cursor:pointer}
+.btn.primary{background:linear-gradient(180deg, var(--primary), var(--primary-2)); border-color:transparent}
+.btn.ghost{background:transparent}
+.btn:active{transform:translateY(1px)}
+.out{margin-top:6px; background:#0f1220; min-height:52px; border:1px dashed #334155; border-radius:14px; padding:12px; white-space:pre-wrap}
+.foot{opacity:.75; text-align:center; font-size:12px; padding:18px 0 40px}
+@media (max-width:640px){
+  .row{grid-template-columns: 1fr}
+}
