@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>مسماك الميداني</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('Msmak.png') no-repeat center center/cover;
+      overflow: hidden;
+    }
+    .overlay {
+      background: rgba(0,0,0,0.4);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+    .text {
+      font-family: 'Tahoma', sans-serif;
+      font-size: 90px;
+      font-weight: bold;
+      color: #38ef7d;
+      position: relative;
+      display: flex;
+      gap: 30px;
+      z-index: 2;
+    }
+    .word {
+      opacity: 0;
+      animation: shine 2s infinite alternate;
+    }
+    .word.first {
+      animation: slideInLeft 2s forwards, shine 2s infinite alternate;
+    }
+    .word.second {
+      animation: slideInRight 2s forwards, shine 2s infinite alternate;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes slideInLeft {
+      from { transform: translateX(-200%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes slideInRight {
+      from { transform: translateX(200%); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+
+    @keyframes shine {
+      0% { text-shadow: 0 0 10px #fff, 0 0 20px #00ffcc; }
+      100% { text-shadow: 0 0 20px #00ffcc, 0 0 40px #fff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="text">
+    <div class="word first">مسماك</div>
+    <div class="word second">الميداني</div>
+  </div>
+</body>
+</html>
