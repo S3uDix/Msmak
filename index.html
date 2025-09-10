@@ -195,7 +195,7 @@
 
     // code/name is required
     const code = document.querySelector("#code").value.trim();
-    if (!code) { alert("يجب إدخال كودك أو اسمك قبل إظهار النتيجة"); return; }
+    if (!code) { alert("يجب إدخال كودك قبل إظهار النتيجة"); return; }
     result += (result ? " | " : "") + code;
 
     // require at least one pick selected (not "لا يوجد")
