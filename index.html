@@ -195,7 +195,7 @@
 
     // code/name is required
     const code = document.querySelector("#code").value.trim();
-    if (!code) { alert("يجب إدخال كودك قبل إظهار النتيجة"); return; }
+    if (!code) { alert("يجب إدخال كودك"); return; }
     result += (result ? " | " : "") + code;
 
     // require at least one pick selected (not "لا يوجد")
@@ -210,7 +210,7 @@
       document.querySelector("#sel_college").value
     ];
     const anyPick = pickValues.some(v=> v && v !== "لا يوجد");
-    if (!anyPick) { alert("يجب اختيار واحد على الأقل من الخانات قبل إظهار النتيجة"); return; }
+    if (!anyPick) { alert("يجب اختيار مسمى ميداني"); return; }
 
     // tawjeeh + directive number (with one space between)
     const mainPick = pickValues.find(v=> v && v !== "لا يوجد") || "";
